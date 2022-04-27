@@ -22,5 +22,6 @@ urlpatterns = [
     path('',views.home),
     path('generatedpassword/',views.password, name='password'),
     path('about/',views.about, name='about'),
-    path('out/',views.out, name='out')
+    path('out/',views.out, name='out'),
+    path('generatedpassword/',views.table, name ="table")
 ]
