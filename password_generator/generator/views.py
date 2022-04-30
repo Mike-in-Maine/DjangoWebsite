@@ -4,22 +4,11 @@ import random
 # Create your views here.
 import pandas as pd
 
-
-def table(request):
-    df = pd.read_csv("generator/templates/generator/april.csv")
-    # 'tableview/static/csv/20_Startups.csv' is the django
-    # directory where csv file exist.
-    # Manipulate DataFrame using to_html() function
-    geeks_object = df.to_html()
-    print(geeks_object)
-    myname = "Miky"
-
-    return HttpResponse(request, 'generator/password.html', {'table':geeks_object, 'name':myname})
-
+def sj(request):
+    return render(request, 'generator/sj.html')
 
 def home(request):
     return render(request, 'generator/home.html')
-
 
 def password(request):
     df = pd.read_csv("generator/templates/generator/april.csv")
@@ -27,8 +16,6 @@ def password(request):
     # directory where csv file exist.
     # Manipulate DataFrame using to_html() function
     geeks_object = df.to_html()
-
-
 
     characters = list('abcdefghijklmnopqrstuvwxyz')
     if request.GET.get('uppercase'):
@@ -49,5 +36,19 @@ def about(request):
     return render(request, 'generator/about.html')
 def out(request):
     return render(request, 'generator/exit.html')
+
+#___Other functions____
+
+
+#def table(request):
+#    df = pd.read_csv("generator/templates/generator/april.csv")
+#    # 'tableview/static/csv/20_Startups.csv' is the django
+#    # directory where csv file exist.
+#    # Manipulate DataFrame using to_html() function
+#    geeks_object = df.to_html()
+#    print(geeks_object)
+#    myname = "Miky"
+
+#    return HttpResponse(request, 'generator/password.html', {'table':geeks_object, 'name':myname})
 
 #table('generatedpassword/')

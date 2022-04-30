@@ -23,5 +23,6 @@ urlpatterns = [
     path('generatedpassword/',views.password, name='password'),
     path('about/',views.about, name='about'),
     path('out/',views.out, name='out'),
-    path('generatedpassword/',views.table, name ="table")
+
+    path('sj/',views.sj, name ="sj")
 ]
