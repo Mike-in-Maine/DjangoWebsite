@@ -16,6 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from generator import views
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -24,5 +26,7 @@ urlpatterns = [
     path('about/',views.about, name='about'),
     path('out/',views.out, name='out'),
 
-    path('sj/',views.sj, name ="sj")
-]
+    path('sj/',views.sj, name ="sj"),
+    path('sj_loaded/',views.sj_loaded, name ="sj_loaded"),
+    path('data/', views.dataframe, name ="dataframe")
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
